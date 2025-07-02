@@ -1,8 +1,20 @@
-import wikipedia
-
-def scrape(name = 'Microsoft', length = 1):
-    result = wikipedia.summary(name, sentences=length)
-    return result
+from mylib.bot import scrape
+import click
 
 
-print(scrape())
+
+@click.command()
+@click.option('--name',    '-n',
+              default='Microsoft',
+              help='Wikipedia page to scrape')
+@click.option('--length',  '-l',
+              default=1,
+              type=int,
+              help='Number of sentences to return')
+
+def cli(name, length):
+    result = scrape(name, length)
+    click.echo(click.style(f"{result}:", fg='white', bg='blue', bold=True))
+
+if __name__ == '__main__':
+    cli()
