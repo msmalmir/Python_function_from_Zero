@@ -20,3 +20,14 @@ curl -X 'POST' \
 ### Build Container
 `docker build .`
 `docker image ls`
+
+
+### Run container
+
+somthing like this 
+```
+ docker run -p 127.0.0.1:8080:8080 03574d71644a
+ ```
+
+ ### Invoke POST request
+run `invoke.sh`
