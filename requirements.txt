@@ -5,3 +5,6 @@ wikipedia
 ipython
 click
 fire == 0.3.0
+fastapi
+uvicorn[standard]
+pydantic
